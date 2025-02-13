@@ -3,102 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reveal the Rick Roll</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: none; /* Initially hidden */
-            margin: 20px auto;
-        }
-        h1 {
-            color: #333;
-            font-size: 2em;
-            margin-top: 20px;
-        }
-        p {
-            color: #555;
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #visitor-count {
-            margin-top: 30px;
-            font-size: 1.2em;
-            color: #444;
-        }
-    </style>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="container">
-        <h1 id="title">Akhil bhai and Vishnu bhai thop</h1>
-        <p id="description">Click here to see how</p>
-        <button id="reveal-rickroll">Reveal</button>
-        <img id="rickroll-image" src="images/rickroll_4k.jpg" alt="Rick Roll Image">
-        <div id="visitor-count"></div>
+    <h1>Tic-Tac-Toe</h1>
+    <div class="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
     </div>
+    <p id="status">Player X's turn</p>
+    <button id="reset">Reset Game</button>
 
-    <script>
-        // JavaScript Code
-
-        // Get references to elements
-        const image = document.getElementById('rickroll-image');
-        const title = document.getElementById('title');
-        const description = document.getElementById('description');
-        const revealButton = document.getElementById('reveal-rickroll');
-        const visitorCountElement = document.getElementById('visitor-count');
-
-        // Reveal Image on Button Click
-        revealButton.addEventListener('click', () => {
-            image.style.display = 'block'; // Show the image
-            title.textContent = 'Never Gonna Give You Up!';
-            description.textContent = 'Get Rick Rolled Bit*h';
-            revealButton.style.display = 'none'; // Hide the button after clicking
-        });
-
-        // Visitor Counter Using localStorage
-        let visitCount = localStorage.getItem('visitCount');
-        if (visitCount === null) {
-            visitCount = 1; // First visit
-        } else {
-            visitCount = parseInt(visitCount) + 1;
-        }
-        localStorage.setItem('visitCount', visitCount);
-        visitorCountElement.textContent = `Visitor Count: ${visitCount}`;
-
-        // Log actions to the console
-        console.log('Page loaded. JavaScript is active!');
-        console.log(`Current visitor count: ${visitCount}`);
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
